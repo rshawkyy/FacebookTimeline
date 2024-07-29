@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imageV"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:src="@color/blue"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_margin="16dp"/>
+
+        <TextView
+            android:id="@+id/username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/unBlast"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            app:layout_constraintStart_toEndOf="@id/imageV"
+            app:layout_constraintTop_toTopOf="@id/imageV"
+            android:layout_margin="8dp"/>
+
+        <TextView
+            android:id="@+id/timePost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/time"
+            android:textSize="14sp"
+            app:layout_constraintTop_toBottomOf="@id/username"
+            app:layout_constraintStart_toEndOf="@id/imageV"
+            android:layout_margin="8dp"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/earthImage"
+            android:src="@drawable/earth"
+            app:layout_constraintStart_toEndOf="@id/timePost"
+            app:layout_constraintTop_toTopOf="@id/timePost"
+            app:layout_constraintBottom_toBottomOf="@id/timePost"
+            android:layout_marginStart="6dp"/>
+
+        <TextView
+            android:id="@+id/firstCaption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/postCaption"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/imageV"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_margin="8dp"/>
+
+        <TextView
+            android:id="@+id/captionTwo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/captionTwo"
+            android:textColor="@color/lightBlue"
+            app:layout_constraintTop_toBottomOf="@id/firstCaption"
+            app:layout_constraintStart_toStartOf="@id/firstCaption"/>
+
+        <ImageView
+            android:id="@+id/post"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:contentDescription="@string/imagepost"
+            android:src="@color/blue"
+            app:layout_constraintTop_toBottomOf="@id/captionTwo"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <ImageView
+            android:id="@+id/like"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/likeIcon"
+            android:src="@drawable/like"
+            app:layout_constraintTop_toBottomOf="@id/post"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_margin="8dp"/>
+
+        <TextView
+            android:id="@+id/likes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/howManyLikes"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@id/like"
+            app:layout_constraintTop_toTopOf="@id/like"
+            app:layout_constraintBottom_toBottomOf="@id/like"
+            android:layout_margin="8dp"/>
+        <TextView
+            android:id="@+id/shares"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/howManyShares"
+            app:layout_constraintTop_toTopOf="@id/likes"
+            app:layout_constraintBottom_toBottomOf="@id/likes"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="56dp"/>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/sharesProfile"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@color/blue"
+            app:layout_constraintTop_toTopOf="@id/shares"
+            app:layout_constraintBottom_toBottomOf="@id/shares"
+            app:layout_constraintStart_toEndOf="@id/shares"
+            android:layout_marginStart="8dp"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/shareShow"
+            android:src="@drawable/downarrow"
+            app:layout_constraintTop_toTopOf="@id/sharesProfile"
+            app:layout_constraintBottom_toBottomOf="@id/sharesProfile"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <View
+            android:id="@+id/viewLine"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            app:layout_constraintTop_toBottomOf="@+id/like"
+            android:layout_marginTop="8dp"
+            android:background="@color/grey"/>
+
+    <LinearLayout
+        android:id="@+id/linear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/viewLine"
+        app:layout_constraintStart_toStartOf="parent"
+        android:weightSum="3"
+        android:layout_marginTop="8dp"
+        android:paddingHorizontal="16dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            app:icon="@drawable/likee"
+            android:text="@string/like"
+            android:textColor="@color/grey"
+            android:textAllCaps="false"
+            android:textSize="12sp"
+            app:iconSize="24dp"
+            app:iconTintMode="screen"
+            app:iconTint="@android:color/transparent"
+            android:layout_weight="1"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            app:icon="@drawable/comment"
+            android:text="@string/comment"
+            android:textColor="@color/grey"
+            android:textAllCaps="false"
+            android:textSize="12sp"
+            app:iconSize="24dp"
+            app:iconTintMode="screen"
+            app:iconTint="@android:color/transparent"
+            android:layout_weight="1"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            app:icon="@drawable/share"
+            android:text="@string/share"
+            android:textColor="@color/grey"
+            android:textAllCaps="false"
+            android:textSize="12sp"
+            app:iconSize="24dp"
+            app:iconTintMode="screen"
+            app:iconTint="@android:color/transparent"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
